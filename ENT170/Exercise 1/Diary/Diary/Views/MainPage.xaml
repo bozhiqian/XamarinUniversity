@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Diary.Views.MainPage"
+             Title="{Binding Title}"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Diary.ViewModels;assembly=Diary"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=vm:MainPageViewModel,IsDesignTimeCreatable=False}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Grid Padding="16">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" x:Name="lblUserName" Text="Username: " />
+            <Entry Grid.Row="0" Grid.Column="1" Text="{Binding UserName, Mode=TwoWay}" Placeholder="Email" x:Name="entryUserName" Keyboard="Email" />
+            <Label Grid.Row="1" Grid.Column="0" x:Name="lblPassword" Text="Password: " />
+            <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Password, Mode=TwoWay}" x:Name="entryPassword" IsPassword="true" />
+
+            <Button Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" Command="{Binding LoginCommand}" x:Name="btnLogin" Text="Login to Existing Account" />
+
+            <Button Grid.Row="4" x:Name="btnCreateAccount" Command="{Binding CreateAccountCommand}" Text="Create New Account" Grid.ColumnSpan="2" Grid.Column="0" />
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

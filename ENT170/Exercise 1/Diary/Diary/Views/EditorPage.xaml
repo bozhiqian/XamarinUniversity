@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Diary.Views.EditorPage"
+             Title="Diary Editor">
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Editor x:Name="editorEntry" Grid.ColumnSpan="2" Text="{Binding EditorEntry, Mode=TwoWay}" />
+
+        <Button x:Name="btnSave" Text="Save" Grid.Row="1" Command="{Binding SaveCommand}" />
+        <Button x:Name="btnCancel" Text="Cancel" Grid.Row="1" Grid.Column="1" Command="{Binding CancelCommand}" />
+
+    </Grid>
+</ContentPage>
