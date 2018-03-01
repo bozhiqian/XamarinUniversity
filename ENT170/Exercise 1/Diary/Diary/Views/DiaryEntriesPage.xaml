@@ -28,7 +28,7 @@
                             </TextCell.ContextActions>-->
                             </Label>
                             <Button  BindingContext="{Binding Source={x:Reference Root}, Path=BindingContext}"
-                                 Command="{Binding DeleteCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="More" />
+                                 Command="{Binding DeleteCommand}" CommandParameter="{Binding Source={x:Reference PropertyCell}, Path=BindingContext}" Text="Delete" />
                         </StackLayout>
 
                     </ViewCell>

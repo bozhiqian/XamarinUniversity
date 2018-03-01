@@ -14,7 +14,7 @@ namespace Diary.ViewModels
 
         public DiaryEntriesPageViewModel()
         {
-            DeleteCommand = new DelegateCommand(Delete, () => SelectedDiaryEntry != null);
+            DeleteCommand = new DelegateCommand<DiaryEntry>(Delete);
             AddCommand = new DelegateCommand(Add);
             ItemTappedCommand = new DelegateCommand<DiaryEntry>(ItemTapped);
             DiaryEntries = new ObservableCollection<DiaryEntry>();
@@ -61,13 +61,13 @@ namespace Diary.ViewModels
             }
         }
 
-        private async void Delete()
+        private async void Delete(DiaryEntry entry)
         {
-            await App.Store.DeleteEntryAsync(SelectedDiaryEntry);
+            await App.Store.DeleteEntryAsync(entry);
             await LoadDiaryEntries();
         }
 
-        public DelegateCommand DeleteCommand { get; }
+        public DelegateCommand<DiaryEntry> DeleteCommand { get; }
         public DelegateCommand AddCommand { get; }
         public DelegateCommand<DiaryEntry> ItemTappedCommand { get; }
 
