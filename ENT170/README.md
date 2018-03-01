@@ -1,7 +1,17 @@
 ENT170 - Securing Local Data
 =====================
 
-This sample relates to the [ENT170 - Securing Local Data ](http://university.xamarin.com/classes/#ent170-securing-local-data) training course but I rewrite it with prism libary. 
+This sample relates to the [ENT170 - Securing Local Data ](https://github.com/XamarinUniversity/ENT170) training course but I rewrite it with prism libary. 
+
+**What have been included?**
+
+1. EventAggregator
+1. DependencyService
+1. XAML Behaviors
+1. Converter
+1. SQLite
+1. Xamarin.Auth.AccountStore
+1. MVVM pattern with Prism Library
 
 Author
 ------
